@@ -7,7 +7,7 @@
 //		Organisation 		: IPTN
 //		Date 				: 2021-10-19
 //
-//		Abstract 			: D Flip flop signal
+//		Abstract 			: JK Flip flop signal
 //
 //		Description : 
 
@@ -20,11 +20,7 @@ module flipflop_JK(J,K,clk,rstn,Q);
 	
 	reg 	Q1;
 	reg 	IN_Q;
-
 	
-	assign not_J =~J;
-	assign not_K =~K;
-	assign not_IN_Q =~IN_Q;	
 	assign IN_Q= (~J&~K&Q1) | (J&~K) | (J&K&~Q1) ;
 	assign Q = Q1;
 	
